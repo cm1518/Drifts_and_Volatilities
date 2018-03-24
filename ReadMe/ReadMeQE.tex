@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[compact]{titlesec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{harvard}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[T1]{fontenc}
+\usepackage{tgschola}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{etoolbox}
+\usepackage{color}
+
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+
+
+\newcommand{\zerodisplayskips}{%
+  \setlength{\abovedisplayskip}{2pt}
+  \setlength{\belowdisplayskip}{2pt}
+  \setlength{\abovedisplayshortskip}{2pt}
+  \setlength{\belowdisplayshortskip}{2pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
+\newtheorem{remark}{Remark}
+
+\setlength{\textwidth}{5.5in}
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{-.4in} \setlength{\oddsidemargin}{0.35in}
+\setlength{\parskip}{0.0mm}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2890}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Tuesday, September 30, 2008 15:56:13}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+
+\bibliographystyle{agsm}
+%\bibliographystyle{elsarticle-harv}
+%\input{tcilatex}
+\begin{document}
+
+%\linenumbers
+\title{Readme file for Replication files}
+\author{Pooyan Amir-Ahmadi
+\and Christian Matthes
+\and Mu-Chun Wang
+}
+
+\maketitle
+
+
+%=======================================================
+%I. Introduction
+%=======================================================
+%\doublespacing
+
+The zip folder named \emph{QE475\_code\_and\_data.zip} contains all replication files coded in Matlab and data sets, which were used in paper: {\emph{Drifts and Volatilities under Measurement Error: Assessing Monetary Policy Shocks over the Last Century}}. 
+
+\section{General}
+
+This code builds mainly on the codes kindly provided by Koop and Korobilis\footnote{We downloaded a version in $2012$ from\\\href{http://personal.strath.ac.uk/gary.koop/bayes_matlab_code_by_koop_and_korobilis.html}{http://personal.strath.ac.uk/gary.koop/bayes\_matlab\_code\_by\_koop\_and\_korobilis.html}}. We have extended the codes to include measurement errors as detailed in our paper. Regarding the calculation of generalized impulse response function we build on codes kindly provided by Baumeister and Peersman (2013). Another source to be mentioned is the util folder of the econometric toolbox by James P. LeSage. All extensions and modification are commented and documented in the files themselves. 
+
+
+\section{Running the Code}
+To replicate the mains results and graphs reported in the paper run the following four codes in the that order. 
+
+\begin{enumerate}
+\item \begin{verbatim} Main_me_tvpvar_public \end{verbatim}This is the main matlab script running the entire estimation and storing the results in mat files. 
+
+\item \begin{verbatim} do_figure_descriptives_public.m \end{verbatim}This file generates and saves figure $1$, $2$, $3$ and $4$ in the paper. 
+
+\item \begin{verbatim} tvpvar_sr_girf_public.m \end{verbatim}This file computes generalized impulse response functions identifying a monetary policy shock employing sign restrictions as detailed in the paper. Please note that running this code can be quite time and in particular memory intensive. Depending on the system and PC you run the code you might want to consider adjusting your virtual memory. 
+
+\item \begin{verbatim} do_figure_girf_public.m \end{verbatim}This file generates and saves figure $5$, $6$, and $7$ in the paper. 
+\end{enumerate}
+ 
+Please note that the Matlab files themselves are quite elaborately documented and commented.
+
+\end{document}
+
+
